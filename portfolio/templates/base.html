@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Imanuel Chen{% block title %} | {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+</head>
+<body>
+    <nav class="container-fluid">
+        <div class="container nav-content">
+            <div class="nav-title">
+                <a href="{{ url_for('portfolio') }}" class="nav-link">Imanuel Chen</a>
+            </div>
+            <div class="nav-links">
+                <div class="nav-item hidden-xxs">
+                    <a href="{{ url_for('portfolio') }}" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item dropdown">
+                    <a class="nav-link">Projects</a>
+                    <div class="dropdown-menu">
+                        <a href="" class="nav-item nav-link">Art Admin</a>
+                        <a href="" class="nav-item nav-link">MemPassGen</a>
+                        <a href="" class="nav-item nav-link">Soundulate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% block body %}
+    {% endblock %}
+    <script src="{{ url_for('static', filename='index.js')}}"></script>
+</body>
+</html>
