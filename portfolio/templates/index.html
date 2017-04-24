@@ -1,8 +1,43 @@
 {% extends 'base.html' %}
 
-{% block body %}
-<header>
+{% block styling %}
+<style>
+header {
+    background-color: #CCFFDA;
+    margin-top: 2em;
+}
+header .container {
+    height: 130px;
 
+    position: relative;
+}
+.portrait {
+    width: 160px;
+    height: 160px;
+    margin: 0 .5em;
+
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+}
+.portrait,.description {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<header class="container-fluid">
+    <div class="container">
+        <div class="portrait">
+            <img src="{{ url_for('static', filename='portrait.jpg') }}" />
+        </div>
+        <div class="description">
+            this is a sentence about me wow
+        </div>
+    </div>
 </header>
 <div>
 
