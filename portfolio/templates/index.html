@@ -5,6 +5,11 @@
 header {
     background-color: #CCFFDA;
     margin-top: 2em;
+    margin-bottom: 2em;
+}
+header .container {
+    min-height: 140px;
+    position: relative;
 }
 .portrait {
     width: 160px;
@@ -38,6 +43,23 @@ header {
         background-color: #CCFFDA;
     }
 }
+
+.header {
+    text-align: center;
+}
+.project-container {
+    box-shadow: 2px 2px 14px -5px #6E6E6E inset;
+    border-radius: 50px;
+    padding: 25px 0;
+}
+.project-item {
+    box-shadow: 2px 2px 7px 0px #6E6E6E;
+    border-radius: 10px;
+
+    width: 90%;
+    margin: 10px auto;
+    height: 200px;
+}
 </style>
 {% endblock %}
 
@@ -52,7 +74,17 @@ header {
         </div>
     </div>
 </header>
-<div>
+<div class="container">
+    <div class="header">
+        <h1>Projects</h1>
+    </div>
+    <div class="project-container">
+        <div class="project-item">
 
+        </div>
+        <div class="project-item">
+
+        </div>
+    </div>
 </div>
 {% endblock %}
