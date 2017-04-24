@@ -2,6 +2,45 @@ body {
     margin: 0;
     font-family: ‘Lucida Grande’, ‘Lucida Sans Unicode’, Lucida, Verdana, Helvetica, Arial, sans-serif;
 }
+.container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width: 576px) {
+    .container {
+        width: 540px;
+        max-width: 100%;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        width: 720px;
+        max-width: 100%;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 960px;
+        max-width: 100%;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1140px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .hidden-xxs {
+        display: none !important;
+    }
+}
 
 /*
  * Nav bar
@@ -9,7 +48,8 @@ body {
 
 nav {
     background-color: #222222;
-    padding: 0 1em;
+}
+.nav-content {
     display: flex;
     align-items: stretch;
 }
@@ -17,10 +57,12 @@ nav {
     color: white;
     font-size: 1.5em;
     padding: .5em 0;
-    margin-right: 1em;
+    margin-left: 1em;
+
     display: inline-block;
+    white-space: nowrap;
 }
-.nav-content {
+.nav-links {
     margin-left: auto;
     display: inline-flex;
     align-items: stretch;
@@ -31,6 +73,7 @@ nav {
 
     display: flex;
     align-items: stretch;
+    cursor: pointer;
 }
 .nav-item:hover {
     color: white;
