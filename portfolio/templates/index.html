@@ -63,6 +63,9 @@ header:before {
         padding: 2em .5em 1em .5em;
         background-color: #CCFFDA;
     }
+    .description h1 {
+        text-align: center;
+    }
 }
 
 /*
@@ -74,6 +77,7 @@ header:before {
 }
 .about-container {
     font-size: 1.1em;
+    padding: 0 .5em;
 }
 </style>
 {% endblock %}
@@ -88,7 +92,7 @@ header:before {
             <h1>About Me</h1>
             <p>I graduated from the University of Puget Sound with a B.S. in Computer Science and a B.S. in Mathematics with a 3.72 GPA. Currently, I spend my days thinking of and creating independent projects to increase my computer science skills and knowledge. My favorite languages to program in are Python and Javascript, and my favorite frameworks to work with are Flask and Angular. Other passions of mine include music (piano), dance, video games, and cooking.</p>
 
-            <p><b>Current Project:</b> this</p>
+            <p><b>Current Project:</b> MemPassGen</p>
         </div>
     </div>
 </header>
@@ -98,7 +102,7 @@ header:before {
             <h1>About This Page</h1>
         </div>
         <div class="about-container">
-            <p>This page was created using Flask and Angular. All CSS was coded from scratch (except I copy and pasted Bootstrap's containers). I was able to achieve a Google PageSpeed score of 100 on this page by not relying on Bootstrap and by ensuring that the part of the page that uses Angular is not in the 'above the fold' content.</p>
+            <p>This page was created using Flask and Angular. All CSS was coded from scratch (except I copy and pasted Bootstrap's containers). I was able to achieve a Google PageSpeed score of 98 on this page for both mobile and desktop by not relying on Bootstrap and by ensuring that the part of the page that uses Angular is not in the 'above the fold' content. The only reason why it's not 100 is because PythonAnywhere does not provide cache control configuration for static files.</p>
             <p>The page is intended to be simple and concise, yet detailed and thoughtful. Visitors should feel relaxed viewing this page and be able to quickly access desired information.</p>
         </div>
     </div>
