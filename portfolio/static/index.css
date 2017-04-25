@@ -102,8 +102,10 @@ header .container {
     padding: .5em .5em;
 }
 .project-item-contents h2 {
-    color: #3D2B2B;
     margin: 0;
+}
+.project-item-contents a {
+    color: #3C6EB4;
 }
 .project-item-contents a:hover,.show-link:hover {
     text-decoration: underline;
