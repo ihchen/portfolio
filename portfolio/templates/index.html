@@ -21,23 +21,16 @@
             <h1>Projects</h1>
         </div>
         <div class="project-container">
-            <div class="project-item">
-                <div class="project-item-contents">
-                    <h2><a href="">Art Admin Interface</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Just a little longe br cuase i want to test something wow this isn't lorem ismpuieng but what ofwei ns.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                <div class="show-link more">Show More</div>
-                <div class="show-link less hide">Show Less</div>
-                <div class="elipsis">...</div>
-            </div>
-            <div class="project-item">
-                <div class="project-item-contents">
-                </div>
-                <div class="show-link more">Show More</div>
-                <div class="show-link less hide">Show Less</div>
-                <div class="elipsis hide">...</div>
-            </div>
+            <project-item>
+                <h2><a href="">Art Admin Interface</a></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Just a little longe br cuase i want to test something wow this isn't lorem ismpuieng but what ofwei ns.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </project-item>
+            <project-item>
+                <h2><a href="">Art Admin Interface</a></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Just a little longe br cuase i want to test something wow this isn't lorem ismpuieng but what ofwei ns.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </project-item>
         </div>
     </div>
 </div>
@@ -55,45 +48,38 @@
 
 {% block scripts %}
 <script>
-// angular.module('PortfolioProjectList', [])
-// .directive('project-item', function() {
-//     return {
-//         restrict: 'E',
-//         replace: true,
-//         transclude: true,
-//         template: `
-//             <div class="project-item">
-//                 <div class="project-item-contents">
-//                 </div>
-//                 <div class="show-link more">Show More</div>
-//                 <div class="show-link less hide">Show Less</div>
-//                 <div class="elipsis hide">...</div>
-//             </div>
-//         `
-//     };
-// });
-</script>
-<script>
-var showMoreBtns = document.getElementsByClassName('more');
-var showLessBtns = document.getElementsByClassName('less');
+angular.module('PortfolioProjectList', [])
+.directive('projectItem', function() {
+    return {
+        restrict: 'E',
+        replace: true,
+        transclude: true,
+        template: `
+            <div class="project-item">
+                <div class="project-item-contents">
+                    <ng-transclude></ng-transclude>
+                </div>
+                <div class="show-link more">Show More</div>
+                <div class="show-link less hide">Show Less</div>
+            </div>
+        `,
+        link: function(scope, element, attr) {
+            var showMoreBtn = angular.element(element.children()[1]);
+            var showLessBtn = angular.element(element.children()[2]);
 
-for(var i = 0; i < showMoreBtns.length; i++) {
-    showMoreBtns[i].addEventListener("click", function() {
-        this.classList.toggle('hide');
-        this.nextElementSibling.classList.toggle('hide');   //Show Less Button
-
-        var projectItem = this.parentNode;
-        projectItem.style.height = 'auto';
-        projectItem.style.overflow = 'auto';
-    })
-}
-for(var i = 0; i < showLessBtns.length; i++) {
-    showLessBtns[i].addEventListener("click", function() {
-        this.classList.toggle('hide');
-        this.previousElementSibling.classList.toggle('hide');   //Show Less Button
-
-        this.parentNode.removeAttribute("style");
-    })
-}
+            showMoreBtn.on('click', function() {
+                showMoreBtn.toggleClass('hide');
+                showLessBtn.toggleClass('hide');
+                element.css('height', 'auto');
+                element.css('overflow', 'auto');
+            });
+            showLessBtn.on('click', function() {
+                showMoreBtn.toggleClass('hide');
+                showLessBtn.toggleClass('hide');
+                element.removeAttr('style');
+            })
+        }
+    };
+});
 </script>
 {% endblock %}
