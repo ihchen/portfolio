@@ -6,59 +6,69 @@ nav {
     position: fixed;
 }
 .nav-tab {
-    height: 20px;
+    height: 16px;
     width: 100px;
 
-    display: block;
+    display: flex;
+    justify-content: center;
     position: absolute;
     left: 50%;
     transform:translateX(-50%);
 }
-.nav-tab-left,.nav-tab-middle,.nav-tab-right {
+.nav-tab-left,.nav-tab-middle,.nav-tab-right,.nav-tab-left-left,.nav-tab-right-right {
     display: inline-block;
+}
+.nav-tab-left,.nav-tab-middle,.nav-tab-right {
+    background-color: #222222;  /* If change, change left left and right right too */
+    height: 100%;
 }
 .nav-tab-middle {
     width: 60%;
-    height: 100%;
-    background-color: #222222;
+    position: relative;
+}
+.nav-tab-left,.nav-tab-right {
+    width: 10%;
 }
 .nav-tab-left {
-    width: 10%;
-    height: 100%;
-    background-color: #222222;
+    left: -10%;
     border-radius: 0 0 0 100%;
 }
-.nav-tab-left:before {
-    content: '';
-    position: absolute;
+.nav-tab-right {
+    border-radius: 0 0 100% 0;
+    right: -10%;
+}
+.nav-tab-left-left,.nav-tab-right-right {
     width: 10%;
     height: 50%;
-    left: -8.9%;
+    position: relative;
     top: -1px;
     border: 1px solid #222222;
+}
+.nav-tab-left-left {
+    left: 2%;
     border-top-right-radius: 100%;
     border-width: 1px 1px 0 0;
-    border-color: #222222;
     box-shadow: 2px -2px 0 #222222;
 }
-.nav-tab-right {
-    width: 10%;
-    height: 100%;
-    background-color: #222222;
-    border-radius: 0 0 100% 0;
-}
-.nav-tab-right:after {
-    content: '';
-    position: absolute;
-    width: 10%;
-    height: 50%;
-    right: 11.1%;
-    top: -1px;
-    border: 1px solid #222222;
+.nav-tab-right-right {
+    right: 2%;
     border-top-left-radius: 100%;
     border-width: 1px 0 0 1px;
-    border-color: #222222;
     box-shadow: -2px -2px 0 #222222;
+}
+.nav-tab-middle-left,.nav-tab-middle-right {
+    color: white;
+    position: absolute;
+    transform: rotate(90deg);
+}
+.nav-tab-middle-left {
+    left: 2px;
+}
+.nav-tab-middle-right {
+    right: 0;
+}
+.hide {
+    display: none;
 }
 </style>
 {% endblock %}
