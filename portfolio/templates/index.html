@@ -2,10 +2,24 @@
 
 {% block styling %}
 <style>
+.section {
+    padding-bottom: 2em;
+}
+.section-header {
+    text-align: center;
+    padding: 1.34em 0;
+}
+.section-header h1 {
+    margin: 0;
+}
+
+/*
+ * Header
+ */
+
 header {
     background-color: #CCFFDA;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin: 2em 0;
 }
 header .container {
     min-height: 140px;
@@ -44,21 +58,70 @@ header .container {
     }
 }
 
-.header {
-    text-align: center;
+/*
+ * Project Section
+ */
+
+.project.section {
+    background: white; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(white, #F2F2F2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white, #F2F2F2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white, #F2F2F2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #F2F2F2); /* Standard syntax */
 }
 .project-container {
     box-shadow: 2px 2px 14px -5px #6E6E6E inset;
     border-radius: 50px;
+    background-color: white;
     padding: 25px 0;
 }
 .project-item {
-    box-shadow: 2px 2px 7px 0px #6E6E6E;
     border-radius: 10px;
+    box-shadow: 1px 1px 3px 0px #6E6E6E;
+    border: 1px solid white;
+    position: relative;
+    top: 0; left: 0;
+    transition: .3s;
 
     width: 90%;
     margin: 10px auto;
     height: 200px;
+    overflow: hidden;
+}
+.project-item:hover {
+    box-shadow: 4px 4px 3px 0px #6E6E6E;
+    border: 1px solid #F2F2F2;
+    top: -3px; left: -3px;
+}
+.project-item-contents {
+    padding: .5em .5em;
+}
+.project-item-contents h2 {
+    color: #3D2B2B;
+    margin: 0;
+}
+.project-item-contents a:hover,.show-link:hover {
+    text-decoration: underline;
+}
+.show-link {
+    color: #3C6EB4;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+.hide {
+    display: none;
+}
+
+/*
+ * About Section
+ */
+
+.about.section {
+    background-color: #F2F2F2;
 }
 </style>
 {% endblock %}
@@ -74,16 +137,37 @@ header .container {
         </div>
     </div>
 </header>
-<div class="container">
-    <div class="header">
-        <h1>Projects</h1>
-    </div>
-    <div class="project-container">
-        <div class="project-item">
-
+<div class="container-fluid project section">
+    <div class="container">
+        <div class="section-header">
+            <h1>Projects</h1>
         </div>
-        <div class="project-item">
-
+        <div class="project-container">
+            <div class="project-item">
+                <div class="project-item-contents">
+                    <h2><a href="">Art Admin Interface</a></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="show-link">Show More</div>
+                    <div class="show-link hide">Show Less</div>
+                    <div class="elipsis">...</div>
+                </div>
+            </div>
+            <div class="project-item">
+                <div class="show-link">Show More</div>
+                <div class="show-link hide">Show Less</div>
+                <div class="elipsis hide">...</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid about section">
+    <div class="container">
+        <div class="section-header">
+            <h1>About This Page</h1>
+        </div>
+        <div class="about-container">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </div>
     </div>
 </div>
