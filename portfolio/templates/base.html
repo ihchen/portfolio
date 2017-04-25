@@ -6,6 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Imanuel Chen{% block title %}{% endblock %}</title>
+
+    <style>
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .container-fluid {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .container {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    @media (min-width: 576px) {
+        .container {
+            width: 540px;
+            max-width: 100%;
+        }
+    }
+    @media (min-width: 768px) {
+        .container {
+            width: 720px;
+            max-width: 100%;
+        }
+    }
+    @media (min-width: 992px) {
+        .container {
+            width: 960px;
+            max-width: 100%;
+        }
+    }
+    @media (min-width: 1200px) {
+        .container {
+            width: 1140px;
+            max-width: 100%;
+        }
+    }
+
+    /*
+     * Nav bar
+     */
+
+    nav {
+        background-color: #222222;
+        z-index: 10;
+    }
+    .nav-content {
+        display: flex;
+        align-items: stretch;
+    }
+    .nav-title {
+        color: white;
+        font-size: 1.5em;
+        padding: .5em 0;
+        margin-left: .5em;
+
+        display: inline-block;
+        white-space: nowrap;
+    }
+    .nav-links {
+        margin-left: auto;
+        display: inline-flex;
+        align-items: stretch;
+    }
+    .nav-item {
+        color: #9d9d9d;
+        padding: 0 1em;
+
+        display: flex;
+        align-items: stretch;
+        cursor: pointer;
+    }
+    .nav-link {
+        display: flex;
+        align-items: center;
+    }
+    .nav-item.dropdown > .nav-link:after {
+        content: "";
+        border-style: solid;
+        border-width: .25em .25em 0 .25em;
+        border-color: #9d9d9d transparent transparent transparent;
+        border-radius: 1px;
+        position: relative;
+        margin-left: .5em;
+    }
+
+    @media (max-width: 420px) {
+        .hidden-xxs {
+            display: none;
+        }
+    }
+    </style>
+    {% block above_fold_styling %}{% endblock %}
 </head>
 <body>
     <nav class="container-fluid">
@@ -33,7 +128,7 @@
     {% endblock %}
 
     <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}" />
-    {% block styling %}{% endblock %}
+    {% block css_files %}{% endblock %}
 
     <script>
     // Navbar code

@@ -1,7 +1,115 @@
 {% extends 'base.html' %}
 
-{% block styling %}
-<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+{% block above_fold_styling %}
+<style>
+/*
+ * Header
+ */
+
+header {
+    background-color: #CCFFDA;
+    margin: 2em 0;
+}
+header .container {
+    min-height: 140px;
+    position: relative;
+}
+.portrait {
+    width: 160px;
+    height: 160px;
+    margin: 0 .5em;
+
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    position: relative;
+    top: -15px;
+}
+.description {
+    text-align: justify;
+    padding: 0 .5em;
+}
+@media (max-width: 575px) {
+    header {
+        background-color: transparent;
+    }
+    .portrait {
+        float: none;
+        left: 50%;
+        transform: translatex(-50%);
+        z-index: 1;
+    }
+    .description {
+        position: relative;
+        top: -2em;
+        padding: 2em .5em 1em .5em;
+        background-color: #CCFFDA;
+    }
+}
+
+
+/*
+ * Project Section
+ */
+
+.project.section {
+    background: white; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(white, #F2F2F2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white, #F2F2F2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white, #F2F2F2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #F2F2F2); /* Standard syntax */
+}
+.project-container {
+    box-shadow: 2px 2px 14px -5px #6E6E6E inset;
+    border-radius: 50px;
+    background-color: white;
+    padding: 25px 0;
+}
+.project-item {
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px 0px #6E6E6E;
+    border: 1px solid white;
+    position: relative;
+    top: 0; left: 0;
+    transition: .3s;
+
+    width: 90%;
+    margin: 10px auto;
+    height: 200px;
+    overflow: hidden;
+}
+.project-item:after {
+    content: ' ';
+    display: block;
+    background-color: white;
+    height: 1.1em;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.project-item-contents {
+    padding: .5em .5em;
+}
+.project-item-contents h2 {
+    margin: 0;
+}
+.project-item-contents a {
+    color: #3C6EB4;
+}
+.show-link {
+    color: #3C6EB4;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 5;
+}
+.hide {
+    display: none;
+}
+</style>
 {% endblock %}
 
 {% block body %}
@@ -122,42 +230,11 @@
 </div>
 {% endblock %}
 
+{% block css_files %}
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+{% endblock %}
+
 {% block scripts %}
-<script>
-// angular.module('PortfolioProjectList', [])
-// .directive('projectItem', function() {
-//     return {
-//         restrict: 'E',
-//         replace: true,
-//         transclude: true,
-//         template: `
-//             <div class="project-item">
-//                 <div class="project-item-contents">
-//                     <ng-transclude></ng-transclude>
-//                 </div>
-//                 <div class="show-link more">Show More</div>
-//                 <div class="show-link less hide">Show Less</div>
-//             </div>
-//         `,
-//         link: function(scope, element, attr) {
-//             var showMoreBtn = angular.element(element.children()[1]);
-//             var showLessBtn = angular.element(element.children()[2]);
-//
-//             showMoreBtn.on('click', function() {
-//                 showMoreBtn.toggleClass('hide');
-//                 showLessBtn.toggleClass('hide');
-//                 element.css('height', 'auto');
-//                 element.css('overflow', 'auto');
-//             });
-//             showLessBtn.on('click', function() {
-//                 showMoreBtn.toggleClass('hide');
-//                 showLessBtn.toggleClass('hide');
-//                 element.removeAttr('style');
-//             })
-//         }
-//     };
-// });
-</script>
 <script>
 var showMoreBtns = document.getElementsByClassName('more');
 var showLessBtns = document.getElementsByClassName('less');
