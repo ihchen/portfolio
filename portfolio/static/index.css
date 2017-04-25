@@ -138,3 +138,6 @@ header:before {
 .about.section {
     background-color: #F2F2F2;
 }
+.about-container {
+    font-size: 1.1em;
+}
