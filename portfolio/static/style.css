@@ -1,64 +1,52 @@
-.section {
-    padding-bottom: 2em;
-}
-.section-header {
-    text-align: center;
-    padding: 1.34em 0;
-}
-.section-header h1 {
-    margin: 0;
+a:hover, a:focus, a:active {
+    outline: 0;
 }
 
 /*
- * Header
+ * Nav bar
  */
 
-header {
-    margin: 2em 0;
+.nav-item:hover {
+    color: white;
+}
+
+.dropdown {
     position: relative;
 }
-header:before {
-    content: '';
-    background-color: #CCFFDA;
-    height: 100%;
-    width: 100%;
+.dropdown:hover > .nav-link:after {
+    border-color: white transparent transparent transparent;
+}
+.dropdown-menu {
+    display: none;
+
+    background-color: white;
+    border: 1px solid rgba(0,0,0,.15);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    border-radius: 0 0 .5em .5em;
+    padding: .3em 0;
 
     position: absolute;
-    top: 0; left: 0;
-    z-index: -1;
+    top: 3.4em;
+    right: 0em;
+    z-index: 10;
 }
-.portrait {
-    width: 225px;
-    height: 225px;
-    margin: 0 .5em;
+.dropdown.open {
+    background-color: black;
+    color: white;
+}
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+.dropdown-menu .nav-item {
+    color: #222222;
+    text-align: right;
 
-    border-radius: 50%;
-    overflow: hidden;
-    float: left;
-    position: relative;
-    top: -15px;
+    display: block;
+    padding: .5em 1.4em;
+    margin: 0;
 }
-.description {
-    font-size: 1.1em;
-    text-align: justify;
-    padding: 0 .5em;
-}
-@media (max-width: 575px) {
-    header {
-        background-color: transparent;
-    }
-    .portrait {
-        float: none;
-        left: 50%;
-        transform: translatex(-50%);
-        z-index: 1;
-    }
-    .description {
-        position: relative;
-        top: -2em;
-        padding: 2em .5em 1em .5em;
-        background-color: #CCFFDA;
-    }
+.dropdown-menu .nav-item:hover {
+    background-color: #f5f5f5;
 }
 
 /*
@@ -129,15 +117,4 @@ header:before {
 }
 .hide {
     display: none;
-}
-
-/*
- * About Section
- */
-
-.about.section {
-    background-color: #F2F2F2;
-}
-.about-container {
-    font-size: 1.1em;
 }

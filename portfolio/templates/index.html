@@ -2,7 +2,79 @@
 
 {% block above_fold_styling %}
 <style>
+.section {
+    padding-bottom: 2em;
+}
+.section-header {
+    text-align: center;
+    padding: 1.34em 0;
+}
+.section-header h1 {
+    margin: 0;
+}
 
+/*
+ * Header
+ */
+
+header {
+    margin: 2em 0;
+    position: relative;
+}
+header:before {
+    content: '';
+    background-color: #CCFFDA;
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+}
+.portrait {
+    width: 225px;
+    height: 225px;
+    margin: 0 .5em;
+
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    position: relative;
+    top: -15px;
+}
+.description {
+    font-size: 1.1em;
+    text-align: justify;
+    padding: 0 .5em;
+}
+@media (max-width: 575px) {
+    header {
+        background-color: transparent;
+    }
+    .portrait {
+        float: none;
+        left: 50%;
+        transform: translatex(-50%);
+        z-index: 1;
+    }
+    .description {
+        position: relative;
+        top: -2em;
+        padding: 2em .5em 1em .5em;
+        background-color: #CCFFDA;
+    }
+}
+
+/*
+ * About Section
+ */
+
+.about.section {
+    background-color: #F2F2F2;
+}
+.about-container {
+    font-size: 1.1em;
+}
 </style>
 {% endblock %}
 
@@ -116,10 +188,6 @@
 </div>
 {% endblock %}
 
-{% block css_files %}
-<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
-{% endblock %}
-
 {% block scripts %}
 <script>
 angular.module('PortfolioProjectList', [])
@@ -155,28 +223,5 @@ angular.module('PortfolioProjectList', [])
         }
     }
 });
-</script>
-<script>
-// var showMoreBtns = document.getElementsByClassName('more');
-// var showLessBtns = document.getElementsByClassName('less');
-//
-// for(var i = 0; i < showMoreBtns.length; i++) {
-//     showMoreBtns[i].addEventListener("click", function() {
-//         this.classList.toggle('hide');
-//         this.nextElementSibling.classList.toggle('hide');   //Show Less Button
-//
-//         var projectItem = this.parentNode;
-//         projectItem.style.height = 'auto';
-//         projectItem.style.overflow = 'auto';
-//     })
-// }
-// for(var i = 0; i < showLessBtns.length; i++) {
-//     showLessBtns[i].addEventListener("click", function() {
-//         this.classList.toggle('hide');
-//         this.previousElementSibling.classList.toggle('hide');   //Show Less Button
-//
-//         this.parentNode.removeAttribute("style");
-//     })
-// }
 </script>
 {% endblock %}
