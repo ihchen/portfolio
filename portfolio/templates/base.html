@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Imanuel Chen{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}" />
-    {% block styling %}{% endblock %}
 </head>
 <body>
     <nav class="container-fluid">
@@ -30,8 +28,13 @@
             </div>
         </div>
     </nav>
+
     {% block body %}
     {% endblock %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}" />
+    {% block styling %}{% endblock %}
+
     <script>
     // Navbar code
     var dropdownLinks = document.getElementsByClassName('dropdown');
