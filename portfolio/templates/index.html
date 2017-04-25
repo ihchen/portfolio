@@ -2,12 +2,7 @@
 
 {% block above_fold_styling %}
 <style>
-.about.section {
-    background-color: #F2F2F2;
-}
-.about-container {
-    font-size: 1.1em;
-}
+
 </style>
 {% endblock %}
 
@@ -31,7 +26,7 @@
             <h1>About This Page</h1>
         </div>
         <div class="about-container">
-            <p>This page was created using Flask and Angular. All CSS was coded from scratch (except I copy and pasted Bootstrap's containers). I was able to achieve a Google Pagespeed score of 100 on this page by not relying on Bootstrap and by ensuring that the part of the page that uses Angular is not in the 'above the fold' content.</p>
+            <p>This page was created using Flask and Angular. All CSS was coded from scratch (except I copy and pasted Bootstrap's containers). I was able to achieve a Google PageSpeed score of 100 on this page by not relying on Bootstrap and by ensuring that the part of the page that uses Angular is not in the 'above the fold' content.</p>
             <p>The page is intended to be simple and concise, yet detailed and thoughtful. Visitors should feel relaxed viewing this page and be able to quickly access desired information.</p>
         </div>
     </div>
@@ -42,92 +37,80 @@
             <h1>Projects</h1>
         </div>
         <div class="project-container">
-            <div class="project-item">
-                <div class="project-item-contents">
-                    <h2><a href="">MemPassGen</a></h2>
-                    <i>April 2017</i>
-                    <p>This project was based off an idea I had to create a master password for my password manager. I wanted something easy to remember but difficult to crack, and ended up picking a memorable phrase to me and simply each character to a nearby character on the keyboard. This way, you can avoid actual words but not have to change your muscle memory too much. So I created MemPassGen, which maps your input to keys based on your finger placement on a qwerty keyboard.</p>
+            <project-item>
+                <h2><a href="">MemPassGen</a></h2>
+                <i>April 2017</i>
+                <p>This project was based off an idea I had to create a master password for my password manager. I wanted something easy to remember but difficult to crack, and ended up picking a memorable phrase to me and simply each character to a nearby character on the keyboard. This way, you can avoid actual words but not have to change your muscle memory too much. So I created MemPassGen, which maps your input to keys based on your finger placement on a qwerty keyboard.</p>
 
-                    <p>You can view the source code <a href="https://github.com/ihchen/mempassgen">here</a>.</p>
+                <p>You can view the source code <a href="https://github.com/ihchen/mempassgen">here</a>.</p>
 
-                    Technology:
+                Technology:
+                <ul>
+                    <li>AngularJS (1.6.4)</li>
+                    <li>Bootstrap Grid System</li>
+                    <li>Karma/Jasmine</li>
+                    <li>External Javascript libraries:
                     <ul>
-                        <li>AngularJS (1.6.4)</li>
-                        <li>Bootstrap Grid System</li>
-                        <li>Karma/Jasmine</li>
-                        <li>External Javascript libraries:
-                        <ul>
-                            <li><a href="https://github.com/dropbox/zxcvbn">zxcvbn</a></li>
-                        </ul></li>
-                    </ul>
-                </div>
-                <div class="show-link more">Show More</div>
-                <div class="show-link less hide">Show Less</div>
-            </div>
-            <div class="project-item">
-                <div class="project-item-contents">
-                    <h2><a href="">Art Admin Interface</a></h2>
-                    <i>March 2017</i>
-                    <p>I created an art website for a friend who is an artist which you can view at <a href="carlyabrock.com">carlyabrock.com</a>. In order to make the website self-maintaining, I implemented a modern and intuitive admin interface. For obvious reasons, that admin interface is only accessible to my friend. However, I created a dummy version of the admin interface which you can view by clicking the title link above.</p>
+                        <li><a href="https://github.com/dropbox/zxcvbn">zxcvbn</a></li>
+                    </ul></li>
+                </ul>
+            </project-item>
+            <project-item>
+                <h2><a href="">Art Admin Interface</a></h2>
+                <i>March 2017</i>
+                <p>I created an art website for a friend who is an artist which you can view at <a href="carlyabrock.com">carlyabrock.com</a>. In order to make the website self-maintaining, I implemented a modern and intuitive admin interface. For obvious reasons, that admin interface is only accessible to my friend. However, I created a dummy version of the admin interface which you can view by clicking the title link above.</p>
 
-                    <p>You can view the source code <a href="https://github.com/ihchen/cabrock-flask">here</a>.</p>
+                <p>You can view the source code <a href="https://github.com/ihchen/cabrock-flask">here</a>.</p>
 
-                    Technology:
+                Technology:
+                <ul>
+                    <li>Python (3.5.3)/Flask (0.12)</li>
+                    <li>JQuery (3.2.1)</li>
+                    <li>Bootstrap (3.3.7)</li>
+                    <li>Python unittest</li>
+                    <li>sqlite3</li>
+                    <li>External Javascript libraries:
                     <ul>
-                        <li>Python (3.5.3)/Flask (0.12)</li>
-                        <li>JQuery (3.2.1)</li>
-                        <li>Bootstrap (3.3.7)</li>
-                        <li>Python unittest</li>
-                        <li>sqlite3</li>
-                        <li>External Javascript libraries:
-                        <ul>
-                            <li><a href="http://ashleydw.github.io/lightbox/">Ekko-Lightbox</a></li>
-                            <li><a href="http://rubaxa.github.io/Sortable/">Sortable</a></li>
-                            <li><a href="http://hammerjs.github.io/">HammerJS</a></li>
-                            <li><a href="http://www.jacklmoore.com/autosize/">Autosize</a></li>
-                            <li><a href="https://pdfobject.com/">PDFObject</a></li>
-                        </ul></li>
-                        <li>External Flask libraries:
-                        <ul>
-                            <li><a href="http://flask-sqlalchemy.pocoo.org/2.1/">Flask-SQLAlchemy</a></li>
-                            <li><a href="https://flask-wtf.readthedocs.io/en/stable/">Flask-WTF</a></li>
-                            <li><a href="https://pythonhosted.org/Flask-Mail/">Flask-Mail</a></li>
-                            <li><a href="https://flask-login.readthedocs.io/en/latest/">Flask-Login</a></li>
-                            <li><a href="https://flask-script.readthedocs.io/en/latest/">Flask-Script</a></li>
-                        </ul></li>
-                        <li>External Python libraries:
-                        <ul>
-                            <li><a href="https://python-pillow.org/">pillow</a></li>
-                            <li><a href="https://pypi.python.org/pypi/python-slugify">python-slugify</a></li>
-                        </ul></li>
-                    </ul>
-                </div>
-                <a class="show-link more">Show More</a>
-                <a class="show-link less hide">Show Less</a>
-            </div>
-            <div class="project-item">
-                <div class="project-item-contents">
-                    <h2><a href="">Soundulate</a></h2>
-                    <i>Spring 2016</i>
-                    <p>Soundulate is an ear training program to help University of Puget Sound music students taking the Aural Skills course practice their ability to distinguish different kinds of chords and scales. This was my capstone project in which I collaborated with two other fellow computer science musicians to make. The application replaced an old music program that students detested but had to purchase for the class. Soundulate was being used while we were working on it and still is.</p>
-
-                    <p>You can view the source code <a href="https://github.com/kbarber-ups/Capstone">here</a>.</p>
-
-                    Technology:
+                        <li><a href="http://ashleydw.github.io/lightbox/">Ekko-Lightbox</a></li>
+                        <li><a href="http://rubaxa.github.io/Sortable/">Sortable</a></li>
+                        <li><a href="http://hammerjs.github.io/">HammerJS</a></li>
+                        <li><a href="http://www.jacklmoore.com/autosize/">Autosize</a></li>
+                        <li><a href="https://pdfobject.com/">PDFObject</a></li>
+                    </ul></li>
+                    <li>External Flask libraries:
                     <ul>
-                        <li>Pure Javascript</li>
-                        <li>Pure CSS</li>
-                        <li>PHP</li>
-                        <li>AWS for development</li>
-                        <li>External Javascript libraries:
-                        <ul>
-                            <li><a href="https://howlerjs.com/">Howler.js</a></li>
-                        </ul></li>
-                    </ul>
-                </div>
-                <div class="show-link more">Show More</div>
-                <div class="show-link less hide">Show Less</div>
-            </div>
+                        <li><a href="http://flask-sqlalchemy.pocoo.org/2.1/">Flask-SQLAlchemy</a></li>
+                        <li><a href="https://flask-wtf.readthedocs.io/en/stable/">Flask-WTF</a></li>
+                        <li><a href="https://pythonhosted.org/Flask-Mail/">Flask-Mail</a></li>
+                        <li><a href="https://flask-login.readthedocs.io/en/latest/">Flask-Login</a></li>
+                        <li><a href="https://flask-script.readthedocs.io/en/latest/">Flask-Script</a></li>
+                    </ul></li>
+                    <li>External Python libraries:
+                    <ul>
+                        <li><a href="https://python-pillow.org/">pillow</a></li>
+                        <li><a href="https://pypi.python.org/pypi/python-slugify">python-slugify</a></li>
+                    </ul></li>
+                </ul>
+            </project-item>
+            <project-item>
+                <h2><a href="">Soundulate</a></h2>
+                <i>Spring 2016</i>
+                <p>Soundulate is an ear training program to help University of Puget Sound music students taking the Aural Skills course practice their ability to distinguish different kinds of chords and scales. This was my capstone project in which I collaborated with two other fellow computer science musicians to make. The application replaced an old music program that students detested but had to purchase for the class. Soundulate was being used while we were working on it and still is.</p>
+
+                <p>You can view the source code <a href="https://github.com/kbarber-ups/Capstone">here</a>.</p>
+
+                Technology:
+                <ul>
+                    <li>Pure Javascript</li>
+                    <li>Pure CSS</li>
+                    <li>PHP</li>
+                    <li>AWS for development</li>
+                    <li>External Javascript libraries:
+                    <ul>
+                        <li><a href="https://howlerjs.com/">Howler.js</a></li>
+                    </ul></li>
+                </ul>
+            </project-item>
         </div>
     </div>
 </div>
@@ -139,26 +122,61 @@
 
 {% block scripts %}
 <script>
-var showMoreBtns = document.getElementsByClassName('more');
-var showLessBtns = document.getElementsByClassName('less');
+angular.module('PortfolioProjectList', [])
+.directive('projectItem', function() {
+    return {
+        restrict: 'E',
+        replace: true,
+        transclude: true,
+        template: `
+            <div class="project-item">
+                <div class="project-item-contents">
+                    <ng-transclude></ng-transclude>
+                </div>
+                <div class="show-link more">Show More</div>
+                <div class="show-link less hide">Show Less</div>
+            </div>
+        `,
+        link: function(scope, element, attr) {
+            var showMoreBtn = angular.element(element.children()[1]);
+            var showLessBtn = angular.element(element.children()[2]);
 
-for(var i = 0; i < showMoreBtns.length; i++) {
-    showMoreBtns[i].addEventListener("click", function() {
-        this.classList.toggle('hide');
-        this.nextElementSibling.classList.toggle('hide');   //Show Less Button
-
-        var projectItem = this.parentNode;
-        projectItem.style.height = 'auto';
-        projectItem.style.overflow = 'auto';
-    })
-}
-for(var i = 0; i < showLessBtns.length; i++) {
-    showLessBtns[i].addEventListener("click", function() {
-        this.classList.toggle('hide');
-        this.previousElementSibling.classList.toggle('hide');   //Show Less Button
-
-        this.parentNode.removeAttribute("style");
-    })
-}
+            showMoreBtn.on('click', function() {
+                showMoreBtn.toggleClass('hide');
+                showLessBtn.toggleClass('hide');
+                element.css('height', 'auto');
+                element.css('overflow', 'auto');
+            });
+            showLessBtn.on('click', function() {
+                showMoreBtn.toggleClass('hide');
+                showLessBtn.toggleClass('hide');
+                element.removeAttr('style');
+            });
+        }
+    }
+});
+</script>
+<script>
+// var showMoreBtns = document.getElementsByClassName('more');
+// var showLessBtns = document.getElementsByClassName('less');
+//
+// for(var i = 0; i < showMoreBtns.length; i++) {
+//     showMoreBtns[i].addEventListener("click", function() {
+//         this.classList.toggle('hide');
+//         this.nextElementSibling.classList.toggle('hide');   //Show Less Button
+//
+//         var projectItem = this.parentNode;
+//         projectItem.style.height = 'auto';
+//         projectItem.style.overflow = 'auto';
+//     })
+// }
+// for(var i = 0; i < showLessBtns.length; i++) {
+//     showLessBtns[i].addEventListener("click", function() {
+//         this.classList.toggle('hide');
+//         this.previousElementSibling.classList.toggle('hide');   //Show Less Button
+//
+//         this.parentNode.removeAttribute("style");
+//     })
+// }
 </script>
 {% endblock %}
