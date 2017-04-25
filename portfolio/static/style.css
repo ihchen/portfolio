@@ -17,8 +17,6 @@ a:hover, a:focus, a:active {
     border-color: white transparent transparent transparent;
 }
 .dropdown-menu {
-    display: none;
-
     background-color: white;
     border: 1px solid rgba(0,0,0,.15);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
