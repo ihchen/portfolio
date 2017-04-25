@@ -1,129 +1,7 @@
 {% extends 'base.html' %}
 
 {% block styling %}
-<style>
-.section {
-    padding-bottom: 2em;
-}
-.section-header {
-    text-align: center;
-    padding: 1.34em 0;
-}
-.section-header h1 {
-    margin: 0;
-}
-
-/*
- * Header
- */
-
-header {
-    background-color: #CCFFDA;
-    margin: 2em 0;
-}
-header .container {
-    min-height: 140px;
-    position: relative;
-}
-.portrait {
-    width: 160px;
-    height: 160px;
-    margin: 0 .5em;
-
-    border-radius: 50%;
-    overflow: hidden;
-    float: left;
-    position: relative;
-    top: -15px;
-}
-.description {
-    text-align: justify;
-    padding: 0 .5em;
-}
-@media (max-width: 575px) {
-    header {
-        background-color: transparent;
-    }
-    .portrait {
-        float: none;
-        left: 50%;
-        transform: translatex(-50%);
-        z-index: 1;
-    }
-    .description {
-        position: relative;
-        top: -2em;
-        padding: 2em .5em 1em .5em;
-        background-color: #CCFFDA;
-    }
-}
-
-/*
- * Project Section
- */
-
-.project.section {
-    background: white; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(white, #F2F2F2); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(white, #F2F2F2); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(white, #F2F2F2); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white, #F2F2F2); /* Standard syntax */
-}
-.project-container {
-    box-shadow: 2px 2px 14px -5px #6E6E6E inset;
-    border-radius: 50px;
-    background-color: white;
-    padding: 25px 0;
-}
-.project-item {
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px 0px #6E6E6E;
-    border: 1px solid white;
-    position: relative;
-    top: 0; left: 0;
-    transition: .3s;
-
-    width: 90%;
-    margin: 10px auto;
-    height: 200px;
-    overflow: hidden;
-}
-.project-item:hover {
-    box-shadow: 4px 4px 3px 0px #6E6E6E;
-    border: 1px solid #F2F2F2;
-    top: -3px; left: -3px;
-}
-.project-item-contents {
-    padding: .5em .5em;
-}
-.project-item-contents h2 {
-    color: #3D2B2B;
-    margin: 0;
-}
-.project-item-contents a:hover,.show-link:hover {
-    text-decoration: underline;
-}
-.show-link {
-    color: #3C6EB4;
-
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: pointer;
-}
-.hide {
-    display: none;
-}
-
-/*
- * About Section
- */
-
-.about.section {
-    background-color: #F2F2F2;
-}
-</style>
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
 {% endblock %}
 
 {% block body %}
@@ -137,7 +15,7 @@ header .container {
         </div>
     </div>
 </header>
-<div class="container-fluid project section">
+<div class="container-fluid project section" ng-app="PortfolioProjectList">
     <div class="container">
         <div class="section-header">
             <h1>Projects</h1>
@@ -146,16 +24,18 @@ header .container {
             <div class="project-item">
                 <div class="project-item-contents">
                     <h2><a href="">Art Admin Interface</a></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Just a little longe br cuase i want to test something wow this isn't lorem ismpuieng but what ofwei ns.</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div class="show-link">Show More</div>
-                    <div class="show-link hide">Show Less</div>
-                    <div class="elipsis">...</div>
                 </div>
+                <div class="show-link more">Show More</div>
+                <div class="show-link less hide">Show Less</div>
+                <div class="elipsis">...</div>
             </div>
             <div class="project-item">
-                <div class="show-link">Show More</div>
-                <div class="show-link hide">Show Less</div>
+                <div class="project-item-contents">
+                </div>
+                <div class="show-link more">Show More</div>
+                <div class="show-link less hide">Show Less</div>
                 <div class="elipsis hide">...</div>
             </div>
         </div>
@@ -171,4 +51,49 @@ header .container {
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// angular.module('PortfolioProjectList', [])
+// .directive('project-item', function() {
+//     return {
+//         restrict: 'E',
+//         replace: true,
+//         transclude: true,
+//         template: `
+//             <div class="project-item">
+//                 <div class="project-item-contents">
+//                 </div>
+//                 <div class="show-link more">Show More</div>
+//                 <div class="show-link less hide">Show Less</div>
+//                 <div class="elipsis hide">...</div>
+//             </div>
+//         `
+//     };
+// });
+</script>
+<script>
+var showMoreBtns = document.getElementsByClassName('more');
+var showLessBtns = document.getElementsByClassName('less');
+
+for(var i = 0; i < showMoreBtns.length; i++) {
+    showMoreBtns[i].addEventListener("click", function() {
+        this.classList.toggle('hide');
+        this.nextElementSibling.classList.toggle('hide');   //Show Less Button
+
+        var projectItem = this.parentNode;
+        projectItem.style.height = 'auto';
+        projectItem.style.overflow = 'auto';
+    })
+}
+for(var i = 0; i < showLessBtns.length; i++) {
+    showLessBtns[i].addEventListener("click", function() {
+        this.classList.toggle('hide');
+        this.previousElementSibling.classList.toggle('hide');   //Show Less Button
+
+        this.parentNode.removeAttribute("style");
+    })
+}
+</script>
 {% endblock %}
