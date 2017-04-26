@@ -4,6 +4,11 @@
 <style>
 nav {
     position: fixed;
+    top: 0;
+    transition: top 1s;
+}
+nav.hide {
+    top: -3.4em;
 }
 .nav-tab {
     height: 16px;
@@ -60,6 +65,7 @@ nav {
     color: white;
     position: absolute;
     transform: rotate(90deg);
+    cursor: default;
 }
 .nav-tab-middle-left {
     left: 2px;
@@ -67,7 +73,7 @@ nav {
 .nav-tab-middle-right {
     right: 0;
 }
-.hide {
+.nav-tab-middle-left.hide,.nav-tab-middle-right.hide {
     display: none;
 }
 </style>
@@ -75,4 +81,49 @@ nav {
 
 {% block body %}
 
+{% endblock %}
+
+{% block scripts %}
+<script>
+var navbar = document.querySelector('nav');
+var navtab = document.querySelector('.nav-tab');
+var navtabArrows = navtab.children[2].children;
+
+hideNavBar();
+
+navbar.addEventListener('mouseenter', function() {
+    showNavBar();
+});
+navbar.addEventListener('mouseleave', function() {
+    hideNavBar();
+});
+navtab.addEventListener('click', function() {
+    toggleNavBar();
+})
+
+function hideNavBar() {
+    navbar.classList.add('hide');
+    navtabArrows[0].classList.add('hide');
+    navtabArrows[1].classList.remove('hide');
+    navtabArrows[2].classList.add('hide');
+    navtabArrows[3].classList.remove('hide');
+}
+
+function showNavBar() {
+    navbar.classList.remove('hide');
+    navtabArrows[0].classList.remove('hide');
+    navtabArrows[1].classList.add('hide');
+    navtabArrows[2].classList.remove('hide');
+    navtabArrows[3].classList.add('hide');
+}
+
+function toggleNavBar() {
+    navbar.classList.toggle('hide');
+    navtabArrows[0].classList.toggle('hide');
+    navtabArrows[1].classList.toggle('hide');
+    navtabArrows[2].classList.toggle('hide');
+    navtabArrows[3].classList.toggle('hide');
+}
+}
+</script>
 {% endblock %}
