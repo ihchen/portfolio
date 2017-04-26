@@ -2,6 +2,9 @@
 
 {% block above_fold_styling %}
 <style>
+/*
+ * Nav Bar
+ */
 nav {
     position: fixed;
     top: 0;
@@ -76,11 +79,22 @@ nav.hide {
 .nav-tab-middle-left.hide,.nav-tab-middle-right.hide {
     display: none;
 }
+
+/*
+ * Body
+ */
+body {
+    overflow: hidden;
+}
+iframe {
+    width: 100vw;
+    height: 100vh;
+}
 </style>
 {% endblock %}
 
 {% block body %}
-
+<iframe src="{{ url }}"></iframe>
 {% endblock %}
 
 {% block scripts %}
