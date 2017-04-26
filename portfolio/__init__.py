@@ -10,7 +10,7 @@ app.config.from_envvar('PORTFOLIO_SETTINGS', silent=True)
 def portfolio():
     return render_template('index.html')
 
-@app.route('/<project>')
+@app.route('/<path:project>')
 def project(project):
     if project == "soundulate":
         url = "https://turing.pugetsound.edu/soundulate/"
