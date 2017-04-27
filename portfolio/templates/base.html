@@ -9,7 +9,7 @@
 
     <style>
     body {
-        font-family: ‘Lucida Grande’, ‘Lucida Sans Unicode’, Lucida, Verdana, Helvetica, Arial, sans-serif;
+        font-family: 'Noto Sans', sans-serif;
         margin: 0;
     }
     a {
@@ -55,6 +55,7 @@
      */
 
     nav {
+        font-family: 'Questrial', sans-serif;
         background-color: #222222;
         z-index: 10;
     }
@@ -64,7 +65,7 @@
     }
     .nav-title {
         color: white;
-        font-size: 1.5em;
+        font-size: 1.75em;
         padding: .5em 0;
         margin-left: .5em;
 
@@ -146,6 +147,7 @@
     {% block body %}
     {% endblock %}
 
+    <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans|Open+Sans|Questrial" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 
     <script>
