@@ -117,3 +117,10 @@ a:hover, a:focus, a:active {
 .show-link.hide {
     display: none;
 }
+
+.contact.section {
+    background-color: #F2F2F2;
+}
+.contact-container {
+    text-align: center;
+}
