@@ -74,8 +74,9 @@ a:hover, a:focus, a:active {
 
     width: 90%;
     margin: 10px auto;
-    height: 200px;
+    max-height: 200px;
     overflow: hidden;
+    transition: max-height 1s;
 }
 .project-item:after {
     content: ' ';

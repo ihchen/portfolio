@@ -229,14 +229,14 @@ angular.module('PortfolioProjectList', [])
             </div>
         `,
         link: function(scope, element, attr) {
+            var contentsHeight = element.children()[0].offsetHeight+'px';
             var showMoreBtn = angular.element(element.children()[1]);
             var showLessBtn = angular.element(element.children()[2]);
 
             showMoreBtn.on('click', function() {
                 showMoreBtn.toggleClass('hide');
                 showLessBtn.toggleClass('hide');
-                element.css('height', 'auto');
-                element.css('overflow', 'auto');
+                element.css('max-height', contentsHeight);
             });
             showLessBtn.on('click', function() {
                 showMoreBtn.toggleClass('hide');
