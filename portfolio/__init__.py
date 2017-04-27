@@ -15,7 +15,7 @@ def project(project):
     if project == "soundulate":
         url = "https://turing.pugetsound.edu/soundulate/"
     elif project == "mock-art-admin":
-        url = "https://ihchen.pythonanywhere.com/project/1"
+        url = "/project/1"
     elif project == "mempassgen":
         url = "https://ihchen.github.io/mempassgen"
     else:
