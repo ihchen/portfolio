@@ -52,11 +52,11 @@ a:hover, a:focus, a:active {
  */
 
 .project.section {
-    background: white; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(white, #F2F2F2); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(white, #F2F2F2); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(white, #F2F2F2); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white, #F2F2F2); /* Standard syntax */
+    background: white;
+    background: -webkit-linear-gradient(white, #F2F2F2);
+    background: -o-linear-gradient(white, #F2F2F2);
+    background: -moz-linear-gradient(white, #F2F2F2);
+    background: linear-gradient(white, #F2F2F2);
 }
 .project-container {
     box-shadow: 2px 2px 14px -5px #6E6E6E inset;
