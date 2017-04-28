@@ -68,15 +68,14 @@ a:hover, a:focus, a:active {
     border-radius: 10px;
     box-shadow: 1px 1px 3px 0px #6E6E6E;
     border: 1px solid white;
-    position: relative;
-    top: 0; left: 0;
-    transition: .3s;
-
     width: 90%;
     margin: 10px auto;
-    max-height: 200px;
+    
     overflow: hidden;
-    transition: max-height 1s;
+    position: relative;
+    top: 0; left: 0;
+    max-height: 200px;
+    transition: top .3s, left .3s, max-height 1s;
 }
 .project-item:after {
     content: ' ';
