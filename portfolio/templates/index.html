@@ -214,7 +214,7 @@ header:before {
 {% block scripts %}
 <script>
 angular.module('PortfolioProjectList', [])
-.directive('projectItem', function() {
+.directive('projectItem', function($timeout) {
     return {
         restrict: 'E',
         replace: true,
@@ -229,9 +229,14 @@ angular.module('PortfolioProjectList', [])
             </div>
         `,
         link: function(scope, element, attr) {
-            var contentsHeight = element.children()[0].offsetHeight+'px';
+            var contentsHeight = '1000px';
             var showMoreBtn = angular.element(element.children()[1]);
             var showLessBtn = angular.element(element.children()[2]);
+
+            // Wait until transclude DOM finishes loading to determine height
+            $timeout(function() {
+                contentsHeight = element.children()[0].offsetHeight+'px';
+            });
 
             showMoreBtn.on('click', function() {
                 showMoreBtn.toggleClass('hide');
