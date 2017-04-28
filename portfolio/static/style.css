@@ -75,7 +75,7 @@ a:hover, a:focus, a:active {
     position: relative;
     top: 0; left: 0;
     max-height: 200px;
-    transition: top .3s, left .3s, max-height 1s;
+    transition: box-shadow .3s, top .3s, left .3s, max-height 1s;
 }
 .project-item:after {
     content: ' ';
