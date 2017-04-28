@@ -13,11 +13,14 @@ def portfolio():
 @app.route('/<path:project>')
 def project(project):
     if project == "soundulate":
+        name = "Soundulate"
         url = "https://turing.pugetsound.edu/soundulate/"
     elif project == "mock-art-admin":
+        name = "Mock Art Admin"
         url = "/project/1"
     elif project == "mempassgen":
+        name = "MemPassGen"
         url = "https://ihchen.github.io/mempassgen"
     else:
         return redirect('/')
-    return render_template('project.html', url=url)
+    return render_template('project.html', name=name, url=url)
