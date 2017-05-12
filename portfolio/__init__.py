@@ -18,6 +18,9 @@ def project(project):
     elif project == "mock-art-admin":
         name = "Mock Art Admin"
         url = "/project/1"
+    elif project == "carly-brock-art":
+        name = "Carly Brock Art"
+        url = "http://carlyabrock.com"
     elif project == "mempassgen":
         name = "MemPassGen"
         url = "https://ihchen.github.io/mempassgen"

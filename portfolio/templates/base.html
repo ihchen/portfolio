@@ -57,7 +57,10 @@
     nav {
         font-family: 'Questrial', sans-serif;
         background-color: #222222;
+        box-shadow: 0 0px 10px #222222;
         z-index: 10;
+        position: fixed;
+        top: 0;
     }
     .nav-content {
         display: flex;
@@ -118,15 +121,19 @@
             </div>
             <div class="nav-links">
                 <div class="nav-item hidden-xxs">
-                    <a href="{{ url_for('portfolio') }}" class="nav-link">Home</a>
+                    <a href="{{ url_for('portfolio') }}#about" class="nav-link">About</a>
                 </div>
                 <div class="nav-item dropdown">
-                    <a class="nav-link">Projects</a>
+                    <a href="{{ url_for('portfolio') }}#portfolio" class="nav-link">Portfolio</a>
                     <div class="dropdown-menu">
+                        <a href="{{ url_for('project', project='carly-brock-art') }}" class="nav-item nav-link">Carly Brock Art</a>
+                        <a href="{{ url_for('project', project='mock-art-admin') }}" class="nav-item nav-link">Mock Art Admin</a>
                         <a href="{{ url_for('project', project='mempassgen') }}" class="nav-item nav-link">MemPassGen</a>
-                        <a href="{{ url_for('project', project='mock-art-admin') }}" class="nav-item nav-link">Art Admin</a>
                         <a href="{{ url_for('project', project='soundulate') }}" class="nav-item nav-link">Soundulate</a>
                     </div>
+                </div>
+                <div class="nav-item">
+                    <a href="{{ url_for('portfolio') }}#contact" class="nav-link">Contact</a>
                 </div>
             </div>
         </div>

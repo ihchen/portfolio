@@ -21,59 +21,49 @@
  */
 
 header {
-    margin: 2em 0;
-    position: relative;
-}
-header:before {
-    content: '';
     background: #CCFFDA;
     background: -webkit-linear-gradient(left top, #55D4BF, #CCFFDA);
     background: -o-linear-gradient(bottom right, #55D4BF, #CCFFDA);
     background: -moz-linear-gradient(bottom right, #55D4BF, #CCFFDA);
     background: linear-gradient(to bottom right, #55D4BF, #CCFFDA);
+    box-shadow: 0px 0px 1px 1px rgb(0,0,0,0.2);
 
+    padding-top: 5em;
+    position: relative;
+    height: 300px;
+    display: flex;
+}
+.header-image {
+    display: inline-flex;
+    width: 45%;
+    min-height: 1px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
     height: 100%;
-    width: 100%;
-
-    position: absolute;
-    top: 0; left: 0;
-    z-index: -1;
 }
 .portrait {
     width: 225px;
     height: 225px;
-    margin-right: 1em;
 
     border-radius: 50%;
     overflow: hidden;
-    float: left;
     position: relative;
-    top: -15px;
 }
-.description {
+.header-content {
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    width: 45%;
     font-size: 1.1em;
-    text-align: justify;
-    padding: 0 .5em;
+    text-align: right;
+    height: 100%;
 }
-@media (max-width: 575px) {
-    header {
-        background-color: transparent;
-    }
-    .portrait {
-        float: none;
-        left: 50%;
-        transform: translatex(-50%);
-        z-index: 1;
-    }
-    .description {
-        position: relative;
-        top: -2em;
-        padding: 2em .5em 1em .5em;
-        background-color: #CCFFDA;
-    }
-    .description h1 {
-        text-align: center;
-    }
+
+.project-image {
+    width: 35%;
+    float: right;
+    box-shadow: 0px 0px 1px 1px rgb(0, 0, 0, 0.2);
 }
 
 /*
@@ -91,62 +81,33 @@ header:before {
 {% endblock %}
 
 {% block body %}
-<header class="container-fluid">
-    <div class="container">
+<header class="container" id="about">
+    <div class="header-image">
         <div class="portrait">
             <img src="{{ url_for('static', filename='portrait.jpg') }}" />
         </div>
-        <div class="description">
-            <h1>About Me</h1>
-            <p>I graduated from the University of Puget Sound with a B.S. in Computer Science and a B.S. in Mathematics with a 3.72 GPA. Currently, I spend my days thinking of and creating independent projects to increase my computer science skills and knowledge. My favorite languages to program in are Python and Javascript, and my favorite frameworks to work with are Flask and Angular. Other passions of mine include music (piano), dance, video games, and cooking.</p>
-
-            <p><b>Current Project:</b> Contributing to <a href="https://github.com/keon/algorithms">this GitHub Repository</a></p>
-        </div>
+    </div>
+    <div class="header-content">
+        <p>University of Puget Sound Alumni</p>
+        <p>B.S. Computer Science</p>
+        <p>B.S. Mathematics</p>
+        <p>Full Stack Developer</p>
+        <p>Flask and Angular Enthusiast</p>
     </div>
 </header>
-<div class="container-fluid about section">
-    <div class="container">
-        <div class="section-header">
-            <h1>About This Page</h1>
-        </div>
-        <div class="about-container">
-            <p>I created this page using Flask and Angular. Other than using Bootstrap's container and container-fluid classes, all CSS was coded from scratch. This page has a Google PageSpeed score of 100 on this page for both mobile and desktop.</p>
-            <p>The page is intended to be simple and concise, yet detailed and thoughtful. Visitors should feel relaxed viewing this page and be able to quickly access desired information.</p>
-        </div>
-    </div>
-</div>
 <div class="container-fluid project section" ng-app="PortfolioProjectList">
-    <div class="container">
+    <div class="container" id="portfolio">
         <div class="section-header">
-            <h1>Projects</h1>
+            <h1>Portfolio</h1>
         </div>
         <div class="project-container">
             <project-item>
-                <h2><a href="{{ url_for('project', project='mempassgen') }}">MemPassGen</a></h2>
-                <i>April 2017</i>
-                <p>This project was based off an idea I had to create a master password for my password manager. I wanted something easy to remember but difficult to crack, and ended up picking a memorable phrase to me and simply each character to a nearby character on the keyboard. This way, you can avoid actual words but not have to change your muscle memory too much. So I created MemPassGen, which maps your input to keys based on your finger placement on a qwerty keyboard.</p>
-
-                <p>You can view the source code <a href="https://github.com/ihchen/mempassgen">here</a>.</p>
-
-                Technology:
-                <ul>
-                    <li>AngularJS (1.6.4)</li>
-                    <li>Bootstrap Grid System</li>
-                    <li>Karma/Jasmine</li>
-                    <li>External Javascript libraries:
-                    <ul>
-                        <li><a href="https://github.com/dropbox/zxcvbn">zxcvbn</a></li>
-                    </ul></li>
-                </ul>
-            </project-item>
-            <project-item>
-                <h2><a href="{{ url_for('project', project='mock-art-admin') }}">Mock Art Site Admin Interface</a></h2>
+                <img class="project-image" src="{{ url_for('static', filename='carly-brock-art.jpg') }}" />
+                <h2><a href="{{ url_for('project', project='carly-brock-art') }}">Carly Brock Art</a></h2>
                 <i>March 2017</i>
-                <p>I created an art website for a friend who is an artist which you can view at <a href="carlyabrock.com">carlyabrock.com</a>. In order to make the website self-maintaining, I implemented a modern and intuitive admin interface. For obvious reasons, that admin interface is only accessible to my friend. However, I created a dummy version of the admin interface which you can view by clicking the title link above.</p>
+                <p>I created an art website for a friend who is an artist and wanted to display her paintings online. Nearly every page has a Google PageSpeed score of 100.</p>
 
-                <p>Feel free to upload, edit, or delete anything you want on the site! Test for security holes if you want as well! If you find any bugs, please e-mail me. The site is also currently not intended for use on mobile.</p>
-
-                <p>You can view the source code <a href="https://github.com/ihchen/mock-art-admin">here</a>.</p>
+                <p>You can view the source code <a href="https://github.com/ihchen/cabrock-flask">here</a>.</p>
 
                 Technology:
                 <ul>
@@ -178,6 +139,34 @@ header:before {
                 </ul>
             </project-item>
             <project-item>
+                <img class="project-image" src="{{ url_for('static', filename='mock-art-admin.jpg') }}" />
+                <h2><a href="{{ url_for('project', project='mock-art-admin') }}">Carly Brock Art Admin Interface</a></h2>
+                <i>March 2017</i>
+                <p>A mock version of the Carly Brock Art admin interface. Feel free to upload, edit, or delete anything you want on the site! Test for security holes if you want as well! If you find any bugs, please e-mail me. The site is also currently not intended for use on mobile.</p>
+
+                <p>You can view the source code <a href="https://github.com/ihchen/mock-art-admin">here</a>.</p>
+            </project-item>
+            <project-item>
+                <img class="project-image" src="{{ url_for('static', filename='mempassgen.jpg') }}" />
+                <h2><a href="{{ url_for('project', project='mempassgen') }}">MemPassGen</a></h2>
+                <i>April 2017</i>
+                <p>This project was based off an idea I had to create a master password for my password manager. I wanted something easy to remember but difficult to crack, and ended up picking a memorable phrase to me and simply each character to a nearby character on the keyboard. This way, you can avoid actual words but not have to change your muscle memory too much. So I created MemPassGen, which maps your input to keys based on your finger placement on a qwerty keyboard.</p>
+
+                <p>You can view the source code <a href="https://github.com/ihchen/mempassgen">here</a>.</p>
+
+                Technology:
+                <ul>
+                    <li>AngularJS (1.6.4)</li>
+                    <li>Bootstrap Grid System</li>
+                    <li>Karma/Jasmine</li>
+                    <li>External Javascript libraries:
+                    <ul>
+                        <li><a href="https://github.com/dropbox/zxcvbn">zxcvbn</a></li>
+                    </ul></li>
+                </ul>
+            </project-item>
+            <project-item>
+                <img class="project-image" src="{{ url_for('static', filename='soundulate.jpg') }}" />
                 <h2><a href="{{ url_for('project', project='soundulate') }}">Soundulate</a></h2>
                 <i>Spring 2016</i>
                 <p>Soundulate is an ear training program to help University of Puget Sound music students taking the Aural Skills course practice their ability to distinguish different kinds of chords and scales. This was my capstone project in which I collaborated with two other fellow computer science musicians to make. The application replaced an old music program that students detested but had to purchase for the class. Soundulate was being used while we were working on it and still is.</p>
@@ -199,14 +188,14 @@ header:before {
         </div>
     </div>
 </div>
-<div class="container-fluid contact section">
+<div class="container-fluid contact section" id="contact">
     <div class="section-header">
         <h1>Contact</h1>
     </div>
     <div class="contact-container">
         <p>imanuelhchen@gmail.com</p>
-        <p>www.linkedin.com/in/imanuelchen</p>
-        <p>www.github.com/ihchen</p>
+        <p><a href="https://www.linkedin.com/in/imanuelchen">www.linkedin.com/in/imanuelchen</a></p>
+        <p><a href="https://www.github.com/ihchen">www.github.com/ihchen</a></p>
     </div>
 </div>
 

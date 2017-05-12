@@ -2,3 +2,5 @@ __pycache__
 *.pyc
 venv
 portfolio_config.py
+setup.py
+portfolio.egg-info

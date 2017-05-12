@@ -22,6 +22,7 @@ a:hover, a:focus, a:active {
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
     border-radius: 0 0 .5em .5em;
     padding: .3em 0;
+    width: 160px;
 
     position: absolute;
     top: 100%;
@@ -70,7 +71,7 @@ a:hover, a:focus, a:active {
     border: 1px solid white;
     width: 90%;
     margin: 10px auto;
-    
+
     overflow: hidden;
     position: relative;
     top: 0; left: 0;
@@ -123,4 +124,7 @@ a:hover, a:focus, a:active {
 }
 .contact-container {
     text-align: center;
+}
+.contact a:hover {
+    text-decoration: underline;
 }
