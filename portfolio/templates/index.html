@@ -29,15 +29,11 @@ header {
     box-shadow: 0px 0px 1px 1px rgb(0,0,0,0.2);
 
     padding-top: 5em;
-    position: relative;
-    height: 300px;
-    display: flex;
 }
 .header-image {
     display: inline-flex;
     width: 45%;
     min-height: 1px;
-    position: relative;
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -48,16 +44,20 @@ header {
 
     border-radius: 50%;
     overflow: hidden;
-    position: relative;
 }
 .header-content {
-    display: inline-flex;
-    flex-direction: column;
+    display: inline-block;
     position: relative;
     width: 45%;
     font-size: 1.1em;
     text-align: right;
-    height: 100%;
+}
+.header-content p {
+    margin: 1.7em 0;
+}
+.current-project {
+    text-align: center;
+    padding-bottom: 2em;
 }
 
 .project-image {
@@ -92,7 +92,11 @@ header {
         <p>B.S. Computer Science</p>
         <p>B.S. Mathematics</p>
         <p>Full Stack Developer</p>
-        <p>Flask and Angular Enthusiast</p>
+        <p>Python and JavaScript Enthusiast</p>
+    </div>
+    <div class="current-project">
+        <b>Current Project: </b>Creating a music search engine that searches by musical queries.<br />
+        Stage: Prototyping algorithm to convert audio file into melody.
     </div>
 </header>
 <div class="container-fluid project section" ng-app="PortfolioProjectList">
