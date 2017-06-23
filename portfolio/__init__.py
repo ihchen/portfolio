@@ -24,6 +24,9 @@ def project(project):
     elif project == "mempassgen":
         name = "MemPassGen"
         url = "https://ihchen.github.io/mempassgen"
+    elif project == "weekly-schedule":
+        name="Weekly Schedule"
+        url = "https://ihchen.github.io/weekly-schedule/"
     else:
         return redirect('/')
     return render_template('project.html', name=name, url=url)
